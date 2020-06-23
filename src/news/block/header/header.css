@@ -1,0 +1,197 @@
+.header{
+  background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png);
+  height: 576px;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  margin: auto;
+}
+.header-location{
+  background: rgba(196, 196, 196, 0.01);
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  max-width: 1440px;
+  margin: auto;
+  color: white;
+  display: flex;
+  height: 80px;
+  margin-bottom: 40px;
+}
+.header-location__title{
+  margin-left: 104px;
+  position: relative;
+}
+.header-location__news-explorer{
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin: 0px;
+  font-weight: bold;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+.header-location__items{
+  margin-left: auto;
+  display: flex;
+  padding: 0px;
+  margin-right: 104px;
+  vertical-align: bottom;
+  align-items:  center;
+}
+.header-location__main{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: initial;
+  color: white;
+  height: 80px;
+  border: #1a1b22;
+  border-bottom:  2px solid white;
+  font-weight: 500;
+  cursor: pointer;
+}
+.header-location__authorization{
+  margin-left: 32px;
+  background-color: initial;
+  color: white;
+  height: 48px;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 100px;
+  min-width: 176px;
+  font-weight: 500;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.header-search{
+  color: #FFF;
+  max-width: 608px;
+  margin: 80px auto 32px auto;
+}
+.header-search__title{
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 64px;
+}
+.header-description{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+.header-search__field{
+  display: flex;
+  max-width: 608px;
+  height: 64px;
+  margin-bottom: 16px;
+  margin-top: 64px;
+}
+.header-search__input{
+  height: 64px;
+  border: 0;
+  padding: 0;
+  width: 608px;
+  border: 1px solid #D1D2D6;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  border-radius: 100px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+.header-search__button{
+  position: relative;
+  border: 0;
+  padding: 0;
+  height: 64px;
+  width: 234px;
+  background: #2F71E5;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  border-radius: 100px;
+  right: 70px;
+  color: #FFF;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+
+}
+.menu{
+  display: none;
+  position: fixed;
+  top: 88px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+}
+.menu__items{
+  background-color: #1A1B22;
+  color: #fff;
+  padding-left: 40px;
+}
+.menu__main{
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 56px;
+  color: #fff;
+  text-decoration: none;
+}
+.menu__authorization{
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 56px;
+  text-decoration: none;
+}
+.menu__user{
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 56px;
+  cursor: pointer;
+  height: 48px;
+  color: #fff;
+  border: none;
+  border: 1px solid #D1D2D6;
+  box-sizing: border-box;
+  border-radius: 100px;
+  width: 112px;
+  font-weight: 500;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+  background-color: #1A1B22;
+}
+.header-login__menu{
+  display: none;
+  background: url(../../images/menuwhite.png);
+  height: 24px;
+  width: 24px;
+}

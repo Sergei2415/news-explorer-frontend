@@ -1,0 +1,39 @@
+.bookmarks{
+  display: flex;
+  color: white;
+  width: 1440px;
+  margin: auto;
+  margin-top: 71px;
+}
+.bookmark__element{
+  margin-left: 24px;
+}
+.bookmark__name{
+  margin-bottom: 7px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 22px;
+  text-align: center;
+  margin-top: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 22px;
+}
+.bookmark__block{
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+}
+.bookmark__img{
+  height: 19px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%
+}

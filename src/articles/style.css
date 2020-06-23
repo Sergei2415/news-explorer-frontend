@@ -1,0 +1,9 @@
+@import url(./block/header/header.css);
+@import url(./block/search/search.css);
+@import url(./block/bookmarks/bookmarks.css);
+@import url(./block/favicon/favicon.css);
+@import url(../vendor/font.css);
+body {
+  background-color: #1A1B22;
+}
+* {outline-style: none;}

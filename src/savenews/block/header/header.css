@@ -1,0 +1,88 @@
+
+.header-login{
+  background-color: white;
+  max-width: 1440px;
+  margin: auto;
+  box-shadow: inset 0px -1px 0px #D1D2D6;
+  display: flex;
+
+}
+.header-login__title{
+  position: relative;
+  height: 80px;
+  margin-left: 104px;
+}
+.header-login__news-explorer{
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin: 0px;
+  font-weight: bold;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+.header-login__items{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-right: 104px;
+}
+.header-login__user{
+  cursor: pointer;
+  margin-left: 51px;
+  height: 48px;
+  background-color: inherit;
+  border: none;
+  border: 1px solid #D1D2D6;
+  box-sizing: border-box;
+  border-radius: 100px;
+  width: 112px;
+  font-weight: 500;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.header-login__authorization{
+  margin-left: 51px;
+  height: 80px;
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid #000;
+  font-weight: 500;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.header-login__main{
+  cursor: pointer;
+  height: 24px;
+  background-color: inherit;
+  border: none;
+  font-weight: 500;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+.header{
+
+}
+.header-login__menu{
+  display: none;
+  background: url(../../images/menu.png);
+  height: 24px;
+  width: 24px;
+}

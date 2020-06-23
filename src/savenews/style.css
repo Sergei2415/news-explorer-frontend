@@ -1,0 +1,14 @@
+@import url(./block/header/header.css);
+@import url(./block/search/search.css);
+@import url(./block/footer/footer.css);
+@import url(./block/saved-articles/saved-articles.css);
+@import url(./block/menu/menu.css);
+@import url(./block/media/media.css);
+@import url(../vendor/font.css);
+body {
+  background-color: white;
+}
+* {outline-style: none;}
+.root{
+  min-width: 275px;
+}
