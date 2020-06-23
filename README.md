@@ -11,3 +11,6 @@ npm run dev - запуск сборки с обновлением
 npm run build - сохранение собранного проекта в папку dist
 
 Планы по доработке проекта будут реализованы на этапе js.
+Ссылка на 1 страницу проекта: https://sergei2415.github.io/news-explorer-frontend/
+Ссылка на 2 страницу проекта: https://sergei2415.github.io/news-explorer-frontend/news/index.html
+Ссылка на 3 страницу проекта: https://sergei2415.github.io/news-explorer-frontend/savenews/index.html

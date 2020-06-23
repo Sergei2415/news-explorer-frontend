@@ -2,10 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Webpack</title>
-    <link rel="stylesheet" href="../style.325b5c5895359a460f53.css">
+    <link rel="stylesheet" href="../style.2d7c2d23a3ed1002ada6.css">
 </head>
 <body>
+  <div class="root">
   <header class="header">
     <div class="header-login">
       <div class="header-login__title">
@@ -15,9 +18,17 @@
         <a class="header-login__main" href="./news/index.html">Главная</a>
         <button class="header-login__authorization">Сохраненные статьи</button>
         <button class="header-login__user">Грета</button>
+        <div class="header-login__menu"></div>
       </div>
     </div>
   </header>
+  <div class="menu">
+   <div class="menu__items">
+      <a class="menu__main" href="./news/index.html">Главная</a>
+      <a class="menu__authorization">Сохраненные статьи</a>
+      <button class="menu__user">Грета</button>
+   </div>
+  </div>
   <div class="saved-articles">
     <p class="saved-articles__save">Сохраненные статьи</p>
     <h1 class="saved-articles__title">Грета, у вас 5 сохранённых статей</h1>
@@ -83,13 +94,19 @@
   <div class="footer-group">
       <h3 class="footer-source__title">Supersite, Powered by News API</h3>
     <div class="footer-location">
-      <a class="footer-location__main" href="https://praktikum.yandex.ru">Главная</a>
-      <a class="footer-location__yandex" href="https://praktikum.yandex.ru">Яндекс.Практикум</a>
-      <img class="footer-location__github">
-      <img class="footer-location__facebook">
+      <div class="footer-location__websites">
+          <a class="footer-location__main" href="../news/index.html">Главная</a>
+          <a class="footer-location__yandex" href="https://praktikum.yandex.ru">Яндекс.Практикум</a>
+       </div>
+      <div class="footer-location__social-network">
+         <img class="footer-location__github">
+         <img class="footer-location__facebook">
+      </div>
     </div>
-  </div>
+   </div>
+   <h3 class="footer-source__title-down">Supersite, Powered by News API</h3>
   </footer>
-    <script src="../savenews.1c3728b082b0bbb8411b.js"></script>
+</div>
+    <script src="../savenews.31aa8026d22272c4a9f8.js"></script>
 </body>
 </html>
