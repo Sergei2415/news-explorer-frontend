@@ -8,6 +8,7 @@
 
 }
 .header-login__title{
+  padding-left: 0;
   position: relative;
   height: 80px;
   margin-left: 104px;
@@ -25,6 +26,7 @@
   line-height: 24px;
 }
 .header-login__items{
+  padding-left: 0;
   margin-left: auto;
   display: flex;
   align-items: center;

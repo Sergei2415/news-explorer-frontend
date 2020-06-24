@@ -7,7 +7,6 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // добавили плагин
 module.exports = {
   entry: {
-    main: './src/articles/index.js',
     news: './src/news/index.js',
     savenews:'./src/savenews/index.js' },
   output: {
@@ -68,13 +67,8 @@ module.exports = {
 }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/articles/index.html',
-      filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
       template: './src/news/index.html',
-      filename: 'news/index.html'
+      filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,

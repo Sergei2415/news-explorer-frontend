@@ -12,3 +12,6 @@ body {
 .root{
   min-width: 275px;
 }
+li {
+  list-style-type: none;
+ }

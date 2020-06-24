@@ -5,75 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Webpack</title>
-    <link rel="stylesheet" href="style.82dc07c1e37ec0a735a1.css">
+    <link rel="stylesheet" href="style.24b78037a6e026d0d443.css">
 </head>
 <body>
-  <header class="header">
-    <div class="header-logout">
-      <div class="header-logout__title">
-      <p class="header-logout__news-explorer">NewsExplorer</p>
+  <div class="root">
+    <header class="header">
+      <nav class="header-location">
+        <ul class="header-location__title">
+        <li class="header-location__news-explorer">NewsExplorer</li>
+        </ul>
+        <ul class="header-location__items">
+          <button class="header-location__main">Главная</button>
+          <button class="header-location__authorization">Авторизоваться</button>
+          <li class="header-login__menu"></li>
+        </ul>
+      </nav>
+      <nav class="menu">
+        <ul class="menu__items">
+           <a class="menu__main" href="./news/index.html">Главная</a>
+           <a class="menu__authorization">Сохраненные статьи</a>
+           <button class="menu__user">Грета</button>
+        </ul>
+       </nav>
+      <div class="header-search">
+        <h1 class="header-search__title">Что в мире творится?</h1>
+        <p class="header-description">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+        <div class="header-search__field">
+          <input class="header-search__input" placeholder="Природа">
+          <button class="header-search__button">Искать</button>
+        </div>
       </div>
-      <div class="header-logout__items">
-        <button class="header-logout__main">Главная</button>
-        <button class="header-logout__authorization">Авторизоваться</button>
+    </header>
+    <div class="popup">
+      <div class="popup__content">
+        <div alt class="popup__close"></div>
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" name="authorization">
+          <p class="popup__input-title">Email</p>
+          <input type="text" name="email" class="popup__input popup__input_type_name" minlength="2" maxlength="31"
+            placeholder="Введите почту">
+          <p class="popup__input-error popup__input-authorization__email"></p>
+          <p class="popup__input-title">Пароль</p>
+          <input type="text" name="password" class="popup__input popup__input_type_link-url" minlength="2" maxlength="310"
+            placeholder="Введите пароль">
+          <p class="popup__input-error error popup__input-authorization__password" id="error"></p>
+          <button type="submit" class="button popup__button button__open" disabled>Войти</button>
+        </form>
+        <div class="popup__registration" id="error">
+          <p class="popup__registration-text">или</p>
+          <p class="popup__registration-title popup__registration-link">Зарегистрироваться</p>
+        </div>
+      </div>
+      <div class="popup__title-registration">
+        <div alt class="popup__close popup__close-registration"></div>
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" name="registration">
+          <p class="popup__input-title">Email</p>
+          <input type="text" name="email" class="popup__input popup__input_type_name" minlength="2" maxlength="31"
+            placeholder="Введите почту">
+          <p class="popup__input-error popup__input-registration__email"></p>
+          <p class="popup__input-title">Пароль</p>
+          <input type="text" name="password" class="popup__input popup__input_type_link-url" minlength="2" maxlength="310"
+            placeholder="Введите пароль">
+          <p class="popup__input-error error popup__input-registration__password" id="error"></p>
+          <p class="popup__input-title">Имя</p>
+          <input type="text" name="name" class="popup__input popup__input_type_link-url" minlength="2" maxlength="310"
+            placeholder="Введите свое имя">
+          <p class="popup__input-error error popup__input-registration__name" id="error"></p>
+          <button type="submit" class="button popup__button button__open" disabled>Зарегистрироваться</button>
+        </form>
+        <div class="popup__registration" id="error">
+          <p class="popup__registration-text">или</p>
+          <p class="popup__registration-title popup__registration-authorization">Войти</p>
+        </div>
       </div>
     </div>
-    <div class="header-login">
-      <div class="header-login__title">
-      <p class="header-login__news-explorer">NewsExplorer</p>
+    <div class="search">
+      <h2 class="search__title">Результаты поиска</h2>
+      <div class="search__result">
+        <div class="card">
+          <div class="card-image">
+            <div class="card-image__photo"></div>
+            <div class="card-image__save" >
+              <div class="card-image__bookmark"></div>
+            </div>
+          </div>
+            <h3 class="card__date">2 августа, 2019</h3>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__information">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <h3 class="card__source">Лента.ру</h3>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <div class="card-image__photo"></div>
+            <div class="card-image__save" >
+              <div class="card-image__bookmark"></div>
+            </div>
+          </div>
+            <h3 class="card__date">2 августа, 2019</h3>
+            <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
+            <p class="card__information">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
+            <h3 class="card__source">Медуза</h3>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <div class="card-image__photo"></div>
+            <div class="card-image__save" >
+              <div class="card-image__bookmark"></div>
+            </div>
+          </div>
+            <h3 class="card__date">2 августа, 2019</h3>
+            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+            <p class="card__information">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+            <h3 class="card__source">Риа</h3>
+        </div>
       </div>
-      <div class="header-login__items">
-        <a class="header-login__main" href="./news/index.html">Главная</a>
-        <button class="header-login__authorization">Сохраненные статьи</button>
-        <button class="header-login__user">Грета</button>
+      <button class="search__button">Показать ещё</button>
+    </div>
+    <div class="author">
+      <div class="author-information">
+        <div class="author-information__photo"></div>
+        <div class="author-information__biography">
+          <h2 class="author-information__title">Об авторе</h2>
+          <p class="author-information__description">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+          <p class="author-information__description"> Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+        </div>
       </div>
     </div>
-  </header>
-  <div class="search">
-    <div class="search__fields">
-      <div class="search__field">
-        <input class="search__input" placeholder="Ещё не ввел текст">
-        <button class="search__button">Искать</button>
-      </div>
-      <div class="search__field">
-        <input class="search__input" placeholder="Ещё не ввел текст">
-        <button class="search__button">Ховер</button>
-      </div>
-      <div class="search__field">
-        <input class="search__input" placeholder="Ещё не ввел текст">
-        <button class="search__button">Нажал</button>
-      </div>
-      <button class="search__locked">Залочено</button>
-    </div>
-    <div class="search__additional">
-      <button class="search__additional-button">Показать еще</button>
-      <button class="search__additional-button">Показать еще</button>
-    </div>
+    <footer class="footer">
+      <div class="footer-group">
+          <h3 class="footer-source__title">Supersite, Powered by News API</h3>
+        <div class="footer-location">
+          <div class="footer-location__websites">
+              <a class="footer-location__main" href="../news/index.html">Главная</a>
+              <a class="footer-location__yandex" href="https://praktikum.yandex.ru">Яндекс.Практикум</a>
+           </div>
+          <div class="footer-location__social-network">
+            <div class="footer-location__github"></div>
+            <div class="footer-location__facebook"></div>
+          </div>
+        </div>
+       </div>
+       <h3 class="footer-source__title-down">Supersite, Powered by News API</h3>
+      </footer>
   </div>
-  <div class="bookmarks">
-    <div class="bookmark__element">
-      <p class="bookmark__name">normal</p>
-      <div class="bookmark__block">
-        <img src="./images/Rectangle1.png" alt="mesto logo" class="bookmark__img">
-      </div>
-    </div>
-    <div class="bookmark__element">
-      <p class="bookmark__name">hover</p>
-      <div class="bookmark__block">
-        <img src="./images/Rectangle2.png" alt="mesto logo" class="bookmark__img">
-      </div>
-    </div>
-    <div class="bookmark__element">
-      <p class="bookmark__name">marked</p>
-      <div class="bookmark__block">
-        <img src="./images/Rectangle3.png" alt="mesto logo" class="bookmark__img">
-      </div>
-    </div>
-  </div>
-  <div class="favicon">
-    <h2 class="favicon__name">Favicon</h2>
-    <div class="favicon__img">N</div>
-  </div>
-    <script src="main.31aa8026d22272c4a9f8.js"></script>
+    <script src="news.0c853f5ab8927cd60e5c.js"></script>
 </body>
 </html>
