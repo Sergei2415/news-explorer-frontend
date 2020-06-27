@@ -7,6 +7,13 @@ const popup_registration = document.querySelector('.popup__title-registration');
 const popup_registration_link = document.querySelector('.popup__registration-link');
 const close_popup_authorization = document.querySelector('.popup__close');
 const popup_close_authorization = document.querySelector('.popup__close-registration');
+const formauthorization = document.forms.authorization;
+const formregistration = document.forms.registration;
+const formauthorization_email = formauthorization.elements.email;
+const formauthorization_password = formauthorization.elements.password;
+const formregistration_email = formregistration.elements.email; 
+const formregistration_password = formregistration.elements.password;
+const formregistration_name = formregistration.elements.name;
 login.addEventListener('click', function loginf(event) {
 dark_background.setAttribute("style", "display:flex")
 popup_login.setAttribute("style", "display:block")
@@ -23,19 +30,17 @@ close_popup_authorization.addEventListener('click', function popup_registrationf
   popup_registration.setAttribute("style", "display:none")
   popup_login.setAttribute("style", "display:none")
   dark_background.setAttribute("style", "display:none")
+  formauthorization_email.value="";
+  formauthorization_password.value="";
+  formregistration_email.value="";
+  formregistration_password.value="";
+  formregistration_name.value="";
 });
 popup_close_authorization.addEventListener('click', function popup_registrationf(event) {
   popup_registration.setAttribute("style", "display:none")
   popup_login.setAttribute("style", "display:none")
   dark_background.setAttribute("style", "display:none")
 });
-const formauthorization = document.forms.authorization;
-const formregistration = document.forms.registration;
-const formauthorization_email = formauthorization.elements.email;
-const formauthorization_password = formauthorization.elements.password;
-const formregistration_email = formregistration.elements.email;
-const formregistration_password = formregistration.elements.password;
-const formregistration_name = formregistration.elements.name;
 formauthorization_email.addEventListener('input', ()=> {  if(/^([A-Za-z0-9_-]\.*){1,100}@[a-z]{2,10}\.[a-z]{2,3}$/i.test(formauthorization_email.value)==false) {
   document.querySelector('.popup__input-authorization__email').textContent="Невалидный email!"
 } else{
@@ -61,4 +66,10 @@ formregistration_name.addEventListener('input', ()=> {  if(/^[A-ZА-Я]{1,1}[A-Z
 } else{
   document.querySelector('.popup__input-registration__name').textContent=""
 };});
-
+const searchinput = document.querySelector('.header-search__input');
+const searchbutton = document.querySelector('.header-search__button');
+searchinput.addEventListener('input', ()=> {  if(searchinput.value.length<1) {console.log(1);
+  searchbutton.setAttribute("disabled", "true");
+} else{console.log(2);
+  searchbutton.setAttribute("disabled", "false");
+};});
