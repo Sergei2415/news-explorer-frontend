@@ -1,0 +1,82 @@
+.footer{
+  height: 80px;
+  color: #1A1B22;
+}
+.footer-source{
+  position: relative;
+  width: 433px;
+}
+.footer-source__title{
+   position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #B6BCBF;
+  margin: 0;
+  height: 22px;
+}
+.footer-location{
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  height: 80px;
+}
+.footer-location__main{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+  text-decoration: none;
+  justify-content: center;
+
+}
+.footer-location__yandex{
+  color: #1A1B22;
+  text-decoration: none;
+  margin-left: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+.footer-location__github{
+  background: url(../../images/Vector.png);
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0 42px;
+  background-repeat: no-repeat;
+}
+.footer-location__facebook{
+  background: url(../../images/Vector1.png);
+  width: 20px;
+  height: 20px;
+  margin: 0 0 0 27px;
+
+}
+.footer-group{
+  margin: auto;
+  max-width: 1240px;
+  position: relative;
+  display: flex;
+}
+.footer-location__websites{
+  display: inline-block;
+}
+.footer-location__social-network{
+  display: flex;
+}
+.footer-source__title-down{
+  display: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #B6BCBF;
+}

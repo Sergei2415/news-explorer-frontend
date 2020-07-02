@@ -1,0 +1,33 @@
+.author{
+
+}
+.author-information{
+  margin-left: 104px;
+  max-width: 1120px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 16px 56px;
+  margin: 80px auto 80px auto;
+}
+.author-information__photo{
+  background: url('../../images/image-03.png') no-repeat;
+  background-size: contain;
+   height: 480px;
+}
+.author-information__biography{
+
+}
+.author-information__title{
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+}
+.author-information__description{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}

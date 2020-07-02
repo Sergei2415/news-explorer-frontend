@@ -1,0 +1,9 @@
+.popup__registration{
+  display: flex;
+  width: 226px;
+  margin: auto;
+  height: 20px;
+  align-items: center;
+  margin-top: 16px;
+  justify-content:center;
+}
