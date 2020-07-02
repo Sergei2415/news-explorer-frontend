@@ -21,7 +21,7 @@ export default class NewsApi {
     this.to = this.date.toISOString().slice(0, 19);
   }
 
-  getNews(request) {console.log(`${this.url}?q=${request}&from=${this.from}&to=${this.to}&pageSize=${this.pageSize}&apiKey=${this.apiKey}`)
+  getNews(request) {
     return fetch(
       `${this.url}?q=${request}&from=${this.from}&to=${this.to}&pageSize=${this.pageSize}&apiKey=${this.apiKey}`,
     )

@@ -20,8 +20,7 @@ headerlogin_user.addEventListener('click', function popup_registrationf() {
   localStorage.removeItem('token');
   window.location.href = '../index.html';
 });
-//
-console.log(localStorage.getItem('token'))
+
 let length = 0;
 const mainapi = new MainApi(urlServer, routers);
 let mass;
@@ -38,7 +37,7 @@ mainapi.getUserData(localStorage.getItem('token'))
 .catch((err) => {console.log(err)
 });
 
-function addcardnews(cards){console.log(cards)
+function addcardnews(cards){
   cards.forEach(element => {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -95,7 +94,6 @@ function addcardnews(cards){console.log(cards)
     });
     search_result.appendChild(card);
   cardimagesave.addEventListener('click', function (event) {
-     console.log(event.target.parentNode.parentNode)
      search_result.removeChild(event.target.parentNode.parentNode);
      mainapi.removeArticle(element._id,localStorage.getItem('token'))
      .then(res => {addcardnews(res.data);})
@@ -133,18 +131,17 @@ function keyword(element){
     }
     t=0;
   })
-  console.log(mass)
   let max = [];
 
   if(mass.length>1){
     for(let i = 0; i < mass.length; i++){
       max[i]=0;
-      for(let g = 0; g < element.length; g++){ console.log(element[g].keyword)
-        if(mass[i]==element[g].keyword){console.log(element[g].keyword)
+      for(let g = 0; g < element.length; g++){
+        if(mass[i]==element[g].keyword){
           max[i]+=1;
         }
       }
-    }console.log(max)
+    }
   }else if(mass.length==1){
     return {max1:mass[0],max2:undefined}
   }
@@ -168,8 +165,6 @@ function keyword(element){
       maxindex2=i;
     }
   }
-  console.log(maxindex1)
-  console.log(maxindex2)
   return {max1:mass[maxindex1],max2:mass[maxindex2], length:mass.length-2}
 }
 catch{}

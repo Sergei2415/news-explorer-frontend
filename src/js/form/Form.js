@@ -15,7 +15,6 @@ export default class Form {
   _validateInputElement(element) {
     if (!element.value) {
     } else if (!element.checkValidity()) {
-      console.log(element.type)
       switch (element.type) {
         case 'text':
           element.nextElementSibling.textContent="Имя должно быть с заглавной буквы и оно должно быть не менее 3 символов!";

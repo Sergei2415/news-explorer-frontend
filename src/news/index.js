@@ -112,7 +112,7 @@ buttonSearch.addEventListener('click', function buttonSearch_click(event) {
   newsapi
   .getNews(inputSearch.value)
   .then(res => {
-    if (res.status === 'ok') {console.log(res.articles.length)
+    if (res.status === 'ok') {
       if(res.articles.length>0){
         preloader.setAttribute('style', 'display:none')
         errorsearch.setAttribute('style', 'display:none')
@@ -189,7 +189,7 @@ function addcard(cards){console.log(cards)
       window.open(url)
     });
     search_result.appendChild(card);
-  cardimagesave.addEventListener('click', function (event) {      console.log(login.textContent)
+  cardimagesave.addEventListener('click', function (event) {
     if(login.textContent=="Авторизоваться"){
       const func = () => {
         event.target.parentNode.parentNode.querySelector('.card-image__authorization').setAttribute('style', "display:none")
@@ -199,8 +199,6 @@ function addcard(cards){console.log(cards)
     } else{
       const card = event.target.parentNode.parentNode;
       const keyword = document.querySelector(".header-search__input").value
-      console.log(card)
-
       const title = card.querySelector(".card__title").textContent
       const text = card.querySelector(".card__information").textContent
       const date = card.querySelector(".card__date").textContent
@@ -216,7 +214,7 @@ function addcard(cards){console.log(cards)
 
         image ="https://i.imgflip.com/36ukce.jpg"
       }else{
-        console.log(card.querySelector(".card-image__photo").style.backgroundImage)
+
         image=card.querySelector(".card-image__photo").style.backgroundImage.slice(5, -2)
       }
       mainapi.createArticle({keyword, title, text, date, source, link, image}, localStorage.getItem('token'))
@@ -231,21 +229,21 @@ function addcard(cards){console.log(cards)
 search_button.addEventListener('click', function buttonSearch_click() {
   addcard(massnews)
 })
-console.log(document.querySelectorAll(".popup__button")[0])
+
 document.querySelectorAll(".popup__button")[0].addEventListener('click', function () {
   event.preventDefault();
   if(form._validateFormAuthorization(formauthorization,formauthorization_email,formauthorization_password)==true){
     const email = formauthorization_email.value;
     const password = formauthorization_password.value
       mainapi.signin(email, password)
-      .then((res)=>{console.log(res)
+      .then((res)=>{
         if(res.token){
           login.removeEventListener("click", loginf);
           login.addEventListener('click', loginout);
         localStorage.setItem('token', res.token );
         const usname = getUserData()
         .then(res=>{const header = new Header({isLoggedIn:true,userName:res});
-      console.log(res)
+
       })
         popup.close()}
         else{
@@ -255,9 +253,7 @@ document.querySelectorAll(".popup__button")[0].addEventListener('click', functio
       .catch(err=>{
         document.querySelectorAll(".popup__all-error")[0].textContent = err})
   }
-  else{
-    console.log("Статус false")
-  }
+
 
 })
 document.querySelectorAll(".popup__button")[1].addEventListener('click', function () {
@@ -267,7 +263,7 @@ document.querySelectorAll(".popup__button")[1].addEventListener('click', functio
     const password = formregistration_password.value
     const name = formregistration_name.value
       mainapi.signup(email, password, name)
-      .then((res)=>{console.log(res)
+      .then((res)=>{
         if(res.message){
           throw res.message
         }
@@ -278,9 +274,7 @@ document.querySelectorAll(".popup__button")[1].addEventListener('click', functio
     })
       .catch(err=>{ document.querySelectorAll(".popup__all-error")[1].textContent = err})
   }
-  else{
-    console.log("Статус false")
-  }
+
 
 })
 popup_text.addEventListener('click', function popup_registrationf() {
