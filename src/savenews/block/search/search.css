@@ -23,10 +23,16 @@
 }
 .card{
   max-width: 400px;
-  margin: 0 auto;
+  color: black;
+  text-decoration: none;
+  position: relative;
 }
 .card-image{
   position: relative;
+}
+.card-inf{
+  text-decoration: none;
+  color: #000;
 }
 .card-image__photo{
   justify-content: center;
@@ -44,6 +50,7 @@
   height: 40px;
   top: 35px;
   right: 37px;
+  z-index: 2;
 }
 .card-image__delete{
   background-image: url(../../images/delete.png);
@@ -121,4 +128,11 @@
   background: #FFF;
   border-radius: 80px;
   margin: 64px auto 0 auto;
+}
+.card-image__authorization-text{
+  height: 20px;
+  margin: auto;
+}
+#f321132{
+
 }

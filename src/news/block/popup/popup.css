@@ -10,6 +10,7 @@
 @import url(./__registration/popup__registration-title.css);
 @import url(./__registration/popup__registration.css);
 @import url(./__title-registration/popup__title-registration.css);
+@import url(./__text/text.css);
 .popup {
   position: fixed;
   top: 0;
@@ -24,6 +25,16 @@
   z-index: 5;
   display: none;
 
+}
+.popup__successful{
+  width: 430px;
+  min-height: 150px;
+  background-color: #fff;
+  border-radius: 9px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 34px 36px;
+  display: none;
 }
 .popup__input-error{
   margin: 0px;
@@ -40,3 +51,10 @@
   padding: 34px 36px;
   display: none;
 }
+.popup__all-error{
+  margin: 20px auto 0 auto;
+  text-align: center;
+
+}
+
+
