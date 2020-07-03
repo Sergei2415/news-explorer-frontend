@@ -1,13 +1,13 @@
 import {
-  dark_background,
-  popup_login,
-  popup_registration,
-  formauthorization_email,
-  formauthorization_password,
-  formregistration_email,
-  formregistration_password,
-  formregistration_name,
-  popup_successful
+  darkBackground,
+  popupLogin,
+  popupRegistration,
+  formauthorizationEmail,
+  formauthorizationPassword,
+  formregistrationEmail,
+  formregistrationPassword,
+  formregistrationName,
+  popupSuccessful
 } from '../constants/constants';
 
 export default class Popup {
@@ -17,31 +17,31 @@ export default class Popup {
   }
 
   clearContent() {
-    formauthorization_email.value="";
-    formauthorization_password.value="";
-    formregistration_email.value="";
-    formregistration_password.value="";
-    formregistration_name.value="";
+    formauthorizationEmail.value="";
+    formauthorizationPassword.value="";
+    formregistrationEmail.value="";
+    formregistrationPassword.value="";
+    formregistrationName.value="";
   }
 
   open() {
-    popup_successful.setAttribute("style", "display:none")
-    popup_registration.setAttribute("style", "display:none")
-    dark_background.setAttribute("style", "display:flex")
-    popup_login.setAttribute("style", "display:block")
+    popupSuccessful.setAttribute("style", "display:none")
+    popupRegistration.setAttribute("style", "display:none")
+    darkBackground.setAttribute("style", "display:flex")
+    popupLogin.setAttribute("style", "display:block")
   }
 
 
   close() {
-    popup_successful.setAttribute("style", "display:none")
-    popup_registration.setAttribute("style", "display:none")
-    popup_login.setAttribute("style", "display:none")
-    dark_background.setAttribute("style", "display:none")
+    popupSuccessful.setAttribute("style", "display:none")
+    popupRegistration.setAttribute("style", "display:none")
+    popupLogin.setAttribute("style", "display:none")
+    darkBackground.setAttribute("style", "display:none")
     this.clearContent();
   }
   registration_link() {
-    popup_login.setAttribute("style", "display:none")
-    popup_registration.setAttribute("style", "display:block")
+    popupLogin.setAttribute("style", "display:none")
+    popupRegistration.setAttribute("style", "display:block")
   }
 
 }

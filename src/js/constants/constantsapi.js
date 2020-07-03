@@ -4,7 +4,6 @@ const url = 'https://praktikum.tk/news/v2/everything';
 const apiKey = '560d4761e5d04bf79de10cf0f2770f76';
 const pageSize = 30;
 const amountDays = 7;
-const errorconnection = "Во время запроса произошла ошибка!"
 const urlServer = "https://24sere.ga/"
 const routers = {
   signIn: 'signin',
@@ -21,7 +20,6 @@ export {
   amountDays,
   buttonSearch,
   inputSearch,
-  errorconnection,
   urlServer,
   routers
 }

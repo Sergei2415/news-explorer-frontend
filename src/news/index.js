@@ -7,25 +7,25 @@ import Header from "../js/header/header"
 import AutomaticLogon from "../js/utils/AutomaticLogon"
 import {
   login,
-  popup_registration_link,
-  popup_login_link,
-  close_popup_authorization,
-  popup_close_authorization,
-  popup_text,
-  formauthorization_email,
-  formauthorization_password,
-  formregistration_email,
-  formregistration_password,
-  formregistration_name,
+  popupRegistrationLink,
+  popupLoginLink,
+  closePopupAuthorization,
+  popupCloseAuthorization,
+  popupText,
+  formauthorizationEmail,
+  formauthorizationPassword,
+  formregistrationEmail,
+  formregistrationPassword,
+  formregistrationName,
   formauthorization,
   formregistration,
-  search_result,
+  searchResult,
   search,
-  search_button,
+  searchButton,
   preloader,
   errorsearch,
-  popup_successful,
-  popup_registration,
+  popupSuccessful,
+  popupRegistration,
 } from '../js/constants/constants';
 import {
   url,
@@ -40,6 +40,7 @@ import {
 //localStorage.removeItem('token');
 
 let length = 0;
+const addingArticles = 3;
 let massnews;
 const popup = new Popup();
 const form = new Form();
@@ -66,44 +67,44 @@ login.addEventListener('click', loginf );
     login.addEventListener('click', loginf );
     const header = new Header({isLoggedIn:false,userName:"Авторизоваться"})
     }
-popup_registration_link.addEventListener('click', function popup_registrationf() {
+popupRegistrationLink.addEventListener('click', function popupRegistrationf() {
   popup.registration_link()
 });
-popup_login_link.addEventListener('click', function popup_registrationf() {
+popupLoginLink.addEventListener('click', function popupRegistrationf() {
   popup.open()
 });
-close_popup_authorization.addEventListener('click', function popup_registrationf() {
+closePopupAuthorization.addEventListener('click', function popupRegistrationf() {
   popup.close()
 });
-popup_close_authorization.addEventListener('click', function popup_registrationf() {
+popupCloseAuthorization.addEventListener('click', function popupRegistrationf() {
   popup.close()
 });
-formauthorization_email.addEventListener('input', function popup_valid(event) {
+formauthorizationEmail.addEventListener('input', function popup_valid(event) {
   form._validateInputElement(event.target)
-  form._validateFormAuthorization(formauthorization,formauthorization_email,formauthorization_password)
+  form._validateFormAuthorization(formauthorization,formauthorizationEmail,formauthorizationPassword)
 })
-formauthorization_password.addEventListener('input', function popup_valid(event) {
+formauthorizationPassword.addEventListener('input', function popup_valid(event) {
   form._validateInputElement(event.target)
-  form._validateFormAuthorization(formauthorization,formauthorization_email,formauthorization_password)
+  form._validateFormAuthorization(formauthorization,formauthorizationEmail,formauthorizationPassword)
 })
-formregistration_email.addEventListener('input', function popup_valid(event) {
+formregistrationEmail.addEventListener('input', function popup_valid(event) {
   form._validateInputElement(event.target)
-  form._validateFormRegistration(formregistration,formregistration_email,formregistration_password,formregistration_name)
+  form._validateFormRegistration(formregistration,formregistrationEmail,formregistrationPassword,formregistrationName)
 })
-formregistration_password.addEventListener('input', function popup_valid(event) {
+formregistrationPassword.addEventListener('input', function popup_valid(event) {
   form._validateInputElement(event.target)
-  form._validateFormRegistration(formregistration,formregistration_email,formregistration_password,formregistration_name)
+  form._validateFormRegistration(formregistration,formregistrationEmail,formregistrationPassword,formregistrationName)
 })
-formregistration_name.addEventListener('input', function popup_valid(event) {
+formregistrationName.addEventListener('input', function popup_valid(event) {
   form._validateInputElement(event.target)
-  form._validateFormRegistration(formregistration,formregistration_email,formregistration_password,formregistration_name)
+  form._validateFormRegistration(formregistration,formregistrationEmail,formregistrationPassword,formregistrationName)
 })
 
 buttonSearch.addEventListener('click', function buttonSearch_click(event) {
   if(inputSearch.checkValidity()&&inputSearch.value!=""){
     length = 0;
-    while (search_result.firstChild) {
-      search_result.removeChild(search_result.firstChild);
+    while (searchResult.firstChild) {
+      searchResult.removeChild(searchResult.firstChild);
   }
   event.preventDefault();
     search.setAttribute('style', 'display:none')
@@ -133,8 +134,10 @@ buttonSearch.addEventListener('click', function buttonSearch_click(event) {
   })
 }
 })
-function addcard(cards){console.log(cards)
-  for(let i = length; i < length+3; i++)
+function addcard(cards){
+  try{
+    searchButton.setAttribute('style', "display:block")
+  for(let i = length; i < length+addingArticles; i++)
   {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -188,7 +191,7 @@ function addcard(cards){console.log(cards)
     cardimagephoto.addEventListener('click', function (event) {
       window.open(url)
     });
-    search_result.appendChild(card);
+    searchResult.appendChild(card);
   cardimagesave.addEventListener('click', function (event) {
     if(login.textContent=="Авторизоваться"){
       const func = () => {
@@ -219,22 +222,27 @@ function addcard(cards){console.log(cards)
       }
       mainapi.createArticle({keyword, title, text, date, source, link, image}, localStorage.getItem('token'))
       .then((res) => {console.log(res) })
-      .catch((err) => {console.log(err) });
+      .catch((err) => {alert(err) });
       cardimagebookmark.setAttribute('style', "background-image: url(./images/Rectangle3.png)")
     }
 
   });}
-  length=length+3;
+  length=length+addingArticles;
 }
-search_button.addEventListener('click', function buttonSearch_click() {
+catch{
+   searchButton.setAttribute('style', "display:none")
+}
+
+}
+searchButton.addEventListener('click', function buttonSearch_click() {
   addcard(massnews)
 })
 
 document.querySelectorAll(".popup__button")[0].addEventListener('click', function () {
   event.preventDefault();
-  if(form._validateFormAuthorization(formauthorization,formauthorization_email,formauthorization_password)==true){
-    const email = formauthorization_email.value;
-    const password = formauthorization_password.value
+  if(form._validateFormAuthorization(formauthorization,formauthorizationEmail,formauthorizationPassword)==true){
+    const email = formauthorizationEmail.value;
+    const password = formauthorizationPassword.value
       mainapi.signin(email, password)
       .then((res)=>{
         if(res.token){
@@ -258,10 +266,10 @@ document.querySelectorAll(".popup__button")[0].addEventListener('click', functio
 })
 document.querySelectorAll(".popup__button")[1].addEventListener('click', function () {
   event.preventDefault();
-  if(form._validateFormAuthorization(formregistration,formregistration_email,formregistration_password,formregistration_name)==true){
-    const email = formregistration_email.value;
-    const password = formregistration_password.value
-    const name = formregistration_name.value
+  if(form._validateFormAuthorization(formregistration,formregistrationEmail,formregistrationPassword,formregistrationName)==true){
+    const email = formregistrationEmail.value;
+    const password = formregistrationPassword.value
+    const name = formregistrationName.value
       mainapi.signup(email, password, name)
       .then((res)=>{
         if(res.message){
@@ -269,17 +277,17 @@ document.querySelectorAll(".popup__button")[1].addEventListener('click', functio
         }
         else{
           document.querySelectorAll(".popup__all-error")[1].textContent ="";
-         popup_registration.setAttribute('style', "display:none")
-      popup_successful.setAttribute('style', "display:block")}
+         popupRegistration.setAttribute('style', "display:none")
+      popupSuccessful.setAttribute('style', "display:block")}
     })
       .catch(err=>{ document.querySelectorAll(".popup__all-error")[1].textContent = err})
   }
 
 
 })
-popup_text.addEventListener('click', function popup_registrationf() {
-  const email = formregistration_email.value;
-  const password = formregistration_password.value
+popupText.addEventListener('click', function popupRegistrationf() {
+  const email = formregistrationEmail.value;
+  const password = formregistrationPassword.value
   mainapi.signin(email, password)
   .then((res)=>{
     if(!res.message){

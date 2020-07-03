@@ -1,5 +1,4 @@
 
-import { errorconnection } from '../constants/constantsapi';
 
 export default class MainApi {
   constructor(url, routes) {
@@ -21,8 +20,17 @@ export default class MainApi {
         name,
       }),
     })
-    .then(res => res.json())
-    .catch((err) => {console.log(err);return err
+    .then((res) => {
+      if (!res.ok) {     //если запрос выполнился неудачно возвращаем отклоненный промис
+        return Promise.reject(res.json());
+      }
+      return res.json(); //если res.ok===true возвращаем результат запроса
+    })
+    .catch((err) => {console.log(err)
+      if (err.message === 'Failed to fetch') {
+      throw "Во время запроса произошла ошибка! Обновите страницу!"
+    }
+    return err;
     });
   }
 
@@ -38,8 +46,18 @@ export default class MainApi {
           password:password,
         })
       })
-      .then(res => res.json())
-      .catch((err) => {console.log(err);return err});
+      .then((res) => {
+        if (!res.ok) {     //если запрос выполнился неудачно возвращаем отклоненный промис
+         return Promise.reject(res.json());
+        }
+        return res.json(); //если res.ok===true возвращаем результат запроса
+      })
+      .catch((err) => {
+      if (err.message === 'Failed to fetch') {
+       throw "Во время запроса произошла ошибка! Обновите страницу!"
+      }
+      return err;
+    });
   }
 
   getUserData(token) {
@@ -51,8 +69,13 @@ export default class MainApi {
           authorization: this._token,
         },
       })
-      .then(res => res.json())
-      .catch((err) => {console.log(err);return err
+      .then((res) => {
+        if (!res.ok) {     //если запрос выполнился неудачно возвращаем отклоненный промис
+          return Promise.reject(`Ошибка: ${res.status}`);
+        }
+        return res.json(); //если res.ok===true возвращаем результат запроса
+      })
+      .catch((err) => {console.log(err)
       });
   }
 
@@ -65,8 +88,17 @@ export default class MainApi {
           authorization: this.token,
         },
       })
-      .then(res => res.json())
-      .catch((err) => {console.log(err);return err
+      .then((res) => {
+        if (!res.ok) {     //если запрос выполнился неудачно возвращаем отклоненный промис
+          return Promise.reject(`Ошибка: ${res.status}`);
+        }
+        return res.json(); //если res.ok===true возвращаем результат запроса
+      })
+      .catch((err) => {
+        if (err.message === 'Failed to fetch') {
+        throw "Во время запроса произошла ошибка!"
+      }
+      throw err;
       });
   }
 
@@ -97,8 +129,18 @@ export default class MainApi {
           image,
         })
       })
-      .then(res => res.json())
-      .catch((err) => {console.log(err);return err
+      .then((res) => {
+        if (!res.ok) {     //если запрос выполнился неудачно возвращаем отклоненный промис
+          return Promise.reject(`Ошибка: ${res.status}`);
+        }
+        return res.json(); //если res.ok===true возвращаем результат запроса
+      })
+      .catch((err) => {console.log(123)
+        console.log(err.message)
+         if (err.message === 'Failed to fetch') {
+        throw "Во время запроса произошла ошибка!"
+      }
+      throw "Адрес фотографии на статье не является валидным или ведет в никуда!";
       });
   }
 
@@ -111,8 +153,17 @@ export default class MainApi {
           authorization: this.token
         }
       })
-      .then(res => res.json())
-      .catch((err) => {console.log(err);return err
+      .then((res) => {
+        if (!res.ok) {     //если запрос выполнился неудачно возвращаем отклоненный промис
+          return Promise.reject(`Ошибка: ${res.status}`);
+        }
+        return res.json(); //если res.ok===true возвращаем результат запроса
+      })
+      .catch((err) => {
+        if (err.message === 'Failed to fetch') {
+          throw "Во время запроса произошла ошибка!"
+        }
+        throw err;
       });
   }
 }

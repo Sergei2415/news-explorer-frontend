@@ -13,7 +13,7 @@ export default class AutomaticLogon {
     .then(res => {console.log(res.data.name)
       const header = new Header({isLoggedIn:true,userName:res.data.name});
     })
-    .catch((err) => {
+    .catch((err) => {console.log(err)
 
     });
   }

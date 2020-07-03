@@ -1,6 +1,6 @@
 import {
   login,
-  headerlocation_savenews
+  headerlocationSaveNews
 } from '../constants/constants';
 export default class Header {
   constructor(props){
@@ -11,12 +11,12 @@ export default class Header {
 
   render() {
     if(this.isLoggedIn==true){
-      headerlocation_savenews.setAttribute('style', "display:block")
+      headerlocationSaveNews.setAttribute('style', "display:block")
 
       login.textContent = this.userName;
 
     } else{
-      headerlocation_savenews.setAttribute('style', "display:none")
+      headerlocationSaveNews.setAttribute('style', "display:none")
       login.textContent =  "Авторизоваться"
     }
   }

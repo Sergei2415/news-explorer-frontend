@@ -25,9 +25,14 @@ export default class NewsApi {
     return fetch(
       `${this.url}?q=${request}&from=${this.from}&to=${this.to}&pageSize=${this.pageSize}&apiKey=${this.apiKey}`,
     )
-      .then(res => res.json())
+    .then((res) => {
+      if (!res.ok) {     //если запрос выполнился неудачно возвращаем отклоненный промис
+        return Promise.reject(`Ошибка: ${res.status}`);
+      }
+      return res.json(); //если res.ok===true возвращаем результат запроса
+    })
       .catch((err) => {
-       console.log(err)
+        alert("Ошибка при выполнении запроса! Обновите страницу!")
       });
   }
 }

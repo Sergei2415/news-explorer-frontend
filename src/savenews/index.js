@@ -10,13 +10,13 @@ import {
   routers
 } from '../js/constants/constantsapi';
 import{
-  search_result,
-  savedarticles_title,
-  savedarticles_keyword,
-  headerlogin_user
+  searchResult,
+  savedarticlesTitle,
+  savedarticlesKeyword,
+  headerloginUser
 } from '../js/constants/savenewsconstants';
 import MainApi from "../js/api/MainApi"
-headerlogin_user.addEventListener('click', function popup_registrationf() {
+headerloginUser.addEventListener('click', function popupRegistrationf() {
   localStorage.removeItem('token');
   window.location.href = '../index.html';
 });
@@ -26,7 +26,7 @@ const mainapi = new MainApi(urlServer, routers);
 let mass;
 
 mainapi.getUserData(localStorage.getItem('token'))
-.then(res => {headerlogin_user.textContent = res.data.name})
+.then(res => {headerloginUser.textContent = res.data.name})
 .catch((err) => {console.log(err)
 });
 
@@ -92,35 +92,38 @@ function addcardnews(cards){
     cardimagephoto.addEventListener('click', function () {
       window.open(url)
     });
-    search_result.appendChild(card);
+    searchResult.appendChild(card);
   cardimagesave.addEventListener('click', function (event) {
-     search_result.removeChild(event.target.parentNode.parentNode);
+
      mainapi.removeArticle(element._id,localStorage.getItem('token'))
-     .then(res => {addcardnews(res.data);})
-     .catch((err) => {console.log(err)
+     .then(res => {
+           searchResult.removeChild(event.target.parentNode.parentNode);
+    })
+     .catch((err) => {
+      alert(err)
      });
   });  });
 
 }
 function titlesavearticles(element){
-  savedarticles_title.textContent = "Грета, у вас " + element.length + " сохраненных статей"
+  savedarticlesTitle.textContent = "Грета, у вас " + element.length + " сохраненных статей"
   if(keyword(element).max1!=undefined&&keyword(element).max2!=undefined){
     if(keyword(element).length!=0)
-     savedarticles_keyword.textContent = "По ключевым словам: " + keyword(element).max1 + ", " + keyword(element).max2 + " и ещё " + keyword(element).length + " другим"
+     savedarticlesKeyword.textContent = "По ключевым словам: " + keyword(element).max1 + ", " + keyword(element).max2 + " и ещё " + keyword(element).length + " другим"
      else
-     savedarticles_keyword.textContent = "По ключевым словам: " + keyword(element).max1 + ", " + keyword(element).max2
+     savedarticlesKeyword.textContent = "По ключевым словам: " + keyword(element).max1 + ", " + keyword(element).max2
   }
   if(keyword(element).length==undefined&&keyword(element).max1!=undefined&&keyword(element).max2==undefined)
-     savedarticles_keyword.textContent = "По ключевому слову: " + keyword(element).max1
+     savedarticlesKeyword.textContent = "По ключевому слову: " + keyword(element).max1
   if(keyword(element).length==undefined&&keyword(element).max1==undefined&&keyword(element).max2==undefined)
-   { savedarticles_keyword.textContent = "Сохраненных статей нет!"
-     savedarticles_title.textContent = "Грета, у вас нет сохраненных статей"}
+   { savedarticlesKeyword.textContent = "Сохраненных статей нет!"
+     savedarticlesTitle.textContent = "Грета, у вас нет сохраненных статей"}
 }
-function keyword(element){
+function keyword(massNews){
   try{
   let t = 0;
   let mass = [];
-  element.forEach(el => {
+  massNews.forEach(el => {
     for(let i = 0; i < mass.length; i++){
       if(mass[i]==el.keyword){
         t=1;
@@ -136,8 +139,8 @@ function keyword(element){
   if(mass.length>1){
     for(let i = 0; i < mass.length; i++){
       max[i]=0;
-      for(let g = 0; g < element.length; g++){
-        if(mass[i]==element[g].keyword){
+      for(let g = 0; g < massNews.length; g++){
+        if(mass[i]==massNews[g].keyword){
           max[i]+=1;
         }
       }
