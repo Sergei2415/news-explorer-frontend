@@ -14,14 +14,12 @@
   font-size: 18px;
   line-height: 24px;
 }
-#button{
-
-  }
-  .button__open {
-
-
-    border: 1px solid rgba(0, 0, 0, .2);
-    color: rgba(0, 0, 0, .2);
-    background-color: transparent;
-
-  }
+.button__open {
+  border: 1px solid rgba(0, 0, 0, .2);
+  color: rgba(0, 0, 0, .2);
+  background-color: transparent;
+}
+.button_active{
+  background-color: #2F71E5;
+  color: white;
+}

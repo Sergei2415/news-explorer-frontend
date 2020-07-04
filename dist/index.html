@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Webpack</title>
-    <link rel="stylesheet" href="style.53e26346ce1254057ddf.css">
+    <link rel="stylesheet" href="style.763cbf8c59f566cc35a2.css">
 </head>
 <body>
   <div class="root">
@@ -16,6 +16,9 @@
         </div>
         <div class="header-location__items">
           <button class="header-location__main">Главная</button>
+          <a class="header-location__savenews" href="../savenews/index.html">
+            <p class="header-location__savenews__title">Сохраненные статьи</p>
+          </a>
           <button class="header-location__authorization">Авторизоваться</button>
           <div class="header-login__menu"></div>
         </div>
@@ -30,10 +33,10 @@
       <div class="header-search">
         <h1 class="header-search__title">Что в мире творится?</h1>
         <p class="header-description">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
-        <div class="header-search__field">
-          <input class="header-search__input" placeholder="Природа">
+        <form class="header-search__field" name="searchnews">
+          <input class="header-search__input" minlength="2" placeholder="Природа" required>
           <button class="header-search__button">Искать</button>
-        </div>
+        </form>
       </div>
     </header>
     <div class="popup">
@@ -42,14 +45,15 @@
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="authorization">
           <p class="popup__input-title">Email</p>
-          <input type="text" name="email" class="popup__input popup__input_type_name" minlength="2" maxlength="31"
+          <input type="email" name="email" class="popup__input popup__input_type_name" minlength="2"  pattern="^([A-Za-z0-9_-]\.*){1,100}@[a-z]{2,10}\.[a-z]{2,3}$" maxlength="31"
             placeholder="Введите почту">
           <p class="popup__input-error popup__input-authorization__email"></p>
           <p class="popup__input-title">Пароль</p>
-          <input type="password"  name="password"  class="popup__input popup__input_type_link-url" minlength="2" maxlength="310"
+          <input type="password"  name="password"  class="popup__input popup__input_type_link-url" minlength="8" maxlength="20"
             placeholder="Введите пароль">
           <p class="popup__input-error error popup__input-authorization__password"></p>
-          <button type="submit" class="button popup__button button__open" disabled>Войти</button>
+          <p class="popup__input-error error popup__all-error"></p>
+          <button type="submit" class="button popup__button button__open" >Войти</button>
         </form>
         <div class="popup__registration">
           <p class="popup__registration-text">или</p>
@@ -61,23 +65,38 @@
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="registration">
           <p class="popup__input-title">Email</p>
-          <input type="text" name="email" class="popup__input popup__input_type_name" minlength="2" maxlength="31"
+          <input type="text" name="email" class="popup__input popup__input_type_name" minlength="2" pattern="^([A-Za-z0-9_-]\.*){1,100}@[a-z]{2,10}\.[a-z]{2,3}$" maxlength="31"
             placeholder="Введите почту">
           <p class="popup__input-error popup__input-registration__email"></p>
           <p class="popup__input-title">Пароль</p>
-          <input type="password" name="password" class="popup__input popup__input_type_link-url" minlength="2" maxlength="310"
+          <input type="password" name="password" class="popup__input popup__input_type_link-url" minlength="8" maxlength="20"
             placeholder="Введите пароль">
           <p class="popup__input-error error popup__input-registration__password"></p>
           <p class="popup__input-title">Имя</p>
-          <input type="text" name="name" class="popup__input popup__input_type_link-url" minlength="2" maxlength="310"
+          <input type="text" name="name" class="popup__input popup__input_type_link-url"  pattern="^[A-ZА-Я]{1,1}[A-Za-zА-Яа-я0-9_-]{2,}$" maxlength="310"
             placeholder="Введите свое имя">
           <p class="popup__input-error error popup__input-registration__name"></p>
-          <button type="submit" class="button popup__button button__open" disabled>Зарегистрироваться</button>
+          <p class="popup__input-error error popup__all-error"></p>
+          <button type="submit" class="button popup__button button__open" >Зарегистрироваться</button>
         </form>
         <div class="popup__registration">
           <p class="popup__registration-text">или</p>
           <p class="popup__registration-title popup__registration-authorization">Войти</p>
         </div>
+      </div>
+      <div class="popup__successful">
+        <div  class="popup__close"></div>
+        <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
+        <p class="popup__text">Выполнить вход</p>
+      </div>
+    </div>
+    <div class="error-search">
+      <h3 class="error-search__title">Ничего не найдено</h3>
+      <p class="error-search__text">К сожалению по вашему запросу ничего не найдено.</p>
+    </div>
+    <div class="preloader">
+      <div class="preloader__title">
+         <i class="circle-preloader"></i>
       </div>
     </div>
     <div class="search">
@@ -149,6 +168,6 @@
        <h3 class="footer-source__title-down">Supersite, Powered by News API</h3>
       </footer>
   </div>
-    <script src="news.d8d7ad020e95624c45ca.js"></script>
+    <script src="news.37b74d6124872e7fe423.js"></script>
 </body>
 </html>

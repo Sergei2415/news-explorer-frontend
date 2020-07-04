@@ -1,0 +1,29 @@
+.error-search{
+  background: #F5F6F7;
+  padding: 200px 0 80px;
+  max-width: 1440px;
+  margin: auto;
+  display: none;
+}
+.error-search__title{
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1A1B22;
+  max-width: 356px;
+  margin: 0 auto 16px;
+  text-align: center;
+}
+.error-search__text{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #B6BCBF;
+  max-width: 356px;
+  margin: 0 auto 0;
+  text-align: center;
+}
